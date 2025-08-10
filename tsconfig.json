@@ -3,5 +3,9 @@
   "compilerOptions": {
     "types": ["node"]
   },
-  "include": [".quasar", "src", "quasar.config.ts"]
+  "vueCompilerOptions": {
+    "globalTypesPath": "./node_modules/.vue-global-types"
+  },
+  "include": [".quasar", "src", "quasar.config.ts"],
+  "exclude": ["node_modules"]
 }
