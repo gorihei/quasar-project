@@ -1,1 +1,23 @@
 // app global css in SCSS form
+.safe-areas {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+.q-header {
+  padding-top: env(safe-area-inset-top);
+}
+
+.q-footer {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.q-drawer--left {
+  padding-left: env(safe-area-inset-left);
+}
+
+.q-drawer--right {
+  padding-right: env(safe-area-inset-right);
+}

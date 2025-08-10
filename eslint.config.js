@@ -80,4 +80,14 @@ export default defineConfigWithVueTs(
   },
 
   prettierSkipFormatting,
+
+  {
+    settings: {
+      'import/resolver': {
+        typescript: {
+          project: ['.quasar/tsconfig.json', 'tsconfig.json']
+        }
+      }
+    }
+  }
 );

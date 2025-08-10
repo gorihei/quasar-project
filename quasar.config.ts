@@ -44,6 +44,12 @@ export default defineConfig((ctx) => {
         // extendTsConfig (tsConfig) {}
       },
 
+      htmlVariables: {
+        buildMode: ctx.dev ? 'development' : 'production',
+        viewport:
+          'viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no',
+      },
+
       vueRouterMode: 'hash', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
@@ -80,18 +86,6 @@ export default defineConfig((ctx) => {
             include: [fileURLToPath(new URL('./src/i18n', import.meta.url))],
           },
         ],
-
-        [
-          'vite-plugin-checker',
-          {
-            vueTsc: true,
-            eslint: {
-              lintCommand: 'eslint -c ./eslint.config.js "./src*/**/*.{ts,js,mjs,cjs,vue}"',
-              useFlatConfig: true,
-            },
-          },
-          { server: false },
-        ],
       ],
     },
 
@@ -103,7 +97,11 @@ export default defineConfig((ctx) => {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#framework
     framework: {
-      config: {},
+      config: {
+        screen: {
+          bodyClasses: true,
+        },
+      },
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
