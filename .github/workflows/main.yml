@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: yarn install --frozen-lockfile
+      - run: yarn install
       - run: yarn build   # 生成物が dist/ に出る想定
       - uses: actions/upload-pages-artifact@v3
         with:
